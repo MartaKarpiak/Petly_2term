@@ -60,6 +60,11 @@
                     <option value="Active">Active</option>
                 </select>
             </div>
+            <div class="form-group">
+    <label asp-for="GraduationYear">Graduation year</label>
+    <input asp-for="GraduationYear" class="form-control" />
+    <span asp-validation-for="GraduationYear" class="text-danger"></span>
+</div>
 
             <div class="d-flex gap-2 align-items-center">
                 <button type="submit" class="btn-auth-primary">Зберегти</button>
