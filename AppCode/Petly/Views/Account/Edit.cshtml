@@ -19,6 +19,17 @@
                 <input asp-for="Name" class="form-control" />
                 <span asp-validation-for="Name" class="text-danger small"></span>
             </div>
+            <div class="form-group">
+    <label asp-for="GraduationYear">
+        Graduation year
+    </label>
+
+    <input asp-for="GraduationYear"
+           class="form-control" />
+
+    <span asp-validation-for="GraduationYear"
+          class="text-danger"></span>
+</div>
             <div class="mb-3">
                 <label asp-for="Surname" class="form-label fw-semibold"></label>
                 <input asp-for="Surname" class="form-control" />

@@ -19,5 +19,7 @@ namespace Petly.Models
         public string? NewImageFileName { get; set; }
 
         public bool ShowNameFields { get; set; } = true;
+
+        public int? GraduationYear { get; set; }
     }
 }

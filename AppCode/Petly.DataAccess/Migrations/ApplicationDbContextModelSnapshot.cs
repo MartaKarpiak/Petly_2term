@@ -230,6 +230,9 @@ namespace Petly.DataAccess.Migrations
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("tinyint(1)");
 
+                    b.Property<int?>("GraduationYear")
+                        .HasColumnType("int");
+
                     b.Property<string>("ImagePath")
                         .HasColumnType("longtext");
 

@@ -13,8 +13,9 @@ var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
-
+    options.UseMySql(
+        connectionString,
+        new MySqlServerVersion(new Version(8, 0, 21))));
 builder.Services.AddIdentity<ApplicationUser, IdentityRole<int>>(options =>
 {
     options.Password.RequireDigit = false;
@@ -81,14 +82,14 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
-using (var scope = app.Services.CreateScope())
-{
-    var services = scope.ServiceProvider;
-    var dbContext = services.GetRequiredService<ApplicationDbContext>();
-    await dbContext.Database.MigrateAsync();
-    await EnsureAdoptionApplicationColumnsAsync(dbContext);
-    await FullDbInitializer.SeedAsync(services);
-}
+//using (var scope = app.Services.CreateScope())
+//{
+  //  var services = scope.ServiceProvider;
+  //  var dbContext = services.GetRequiredService<ApplicationDbContext>();
+   // await dbContext.Database.MigrateAsync();
+   // await EnsureAdoptionApplicationColumnsAsync(dbContext);
+   // await FullDbInitializer.SeedAsync(services);
+//}
 
 app.Run();
 

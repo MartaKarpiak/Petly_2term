@@ -254,6 +254,7 @@ public class AccountController : Controller
     {
         Name = user.Name,
         Surname = user.Surname,
+        GraduationYear = user.GraduationYear,
         Email = user.Email,
         ExistingImagePath = string.IsNullOrEmpty(user.ImagePath)
                             ? "/images/default-profile.png"
@@ -292,6 +293,7 @@ public async Task<IActionResult> Profile(EditProfileViewModel model, IFormFile? 
 
     user.Name = model.Name;
     user.Surname = model.Surname;
+    user.GraduationYear = model.GraduationYear;
     user.Email = model.Email;
 
     if (profileImage != null && profileImage.Length > 0)

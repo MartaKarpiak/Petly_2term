@@ -46,6 +46,8 @@ public class UserEditViewModel
 {
     public int AccountId { get; set; }
 
+    public int? GraduationYear { get; set; }
+
     public string Name { get; set; } = string.Empty;
 
     public string Surname { get; set; } = string.Empty;
